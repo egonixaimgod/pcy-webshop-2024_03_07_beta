@@ -1,5 +1,5 @@
-<div class="container mt-5">
-    <h2>ProductsGET</h2>
+<div class="container px-5 mt-4 mb-4">
+    <h2>Termékek</h2>
     <table class="table">
         <thead>
             <tr>
@@ -24,55 +24,18 @@
     </table>
 </div>
 
-<div class="container">
+<div class="container px-5">
     <div class="row">
-        <div class="col">
-            <div class="col-md-4 mb-5">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h2 class="card-title">AMD Ryzen 5 5600X</h2>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Rem magni
-                            quas
-                            ex
-                            numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-                    </div>
-                    <img src="assets/images/Ryzen_5_5600X.jpg" class="card-img-bottom" alt="AMD Ryzen 5 5600X" style="">
-                    <div class="card-footer"><a class="btn btn-primary btn-sm" routerLink="/cart">Rendeld meg!</a></div>
+        <div class="col-md-4 mb-5" *ngFor="let product of products, let i = index">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title">{{product.name}}</h2>
+                    <h5 class="card-text">Példányszám: {{product.amount}} <br> Ár: {{product.cost}}
+                    </h5>
+                </div>
+                <img [src]="generateImagePath(product.name)" class="card-img-bottom" alt="AMD Ryzen 5 5600X" style="">
+                <div class="card-footer">
+                    <a class="btn btn-primary" (click)="onAddToCart(product)" routerLink="/cart">Rendeld meg!</a>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="col-md-4 mb-5">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h2 class="card-title">AMD Ryzen 5 5600X</h2>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Rem magni
-                            quas
-                            ex
-                            numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-                    </div>
-                    <img src="assets/images/Ryzen_5_5600X.jpg" class="card-img-bottom" alt="AMD Ryzen 5 5600X" style="">
-                    <div class="card-footer"><a class="btn btn-primary btn-sm" routerLink="/cart">Rendeld meg!</a></div>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="col-md-4 mb-5">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h2 class="card-title">AMD Ryzen 5 5600X</h2>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Rem magni
-                            quas
-                            ex
-                            numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-                    </div>
-                    <img src="assets/images/Ryzen_5_5600X.jpg" class="card-img-bottom" alt="AMD Ryzen 5 5600X" style="">
-                    <div class="card-footer"><a class="btn btn-primary btn-sm" routerLink="/cart">Rendeld meg!</a></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
