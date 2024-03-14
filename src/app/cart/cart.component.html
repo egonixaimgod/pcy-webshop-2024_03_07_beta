@@ -1,17 +1,28 @@
-<div class="container">
-    <h2>Kosár tartalma</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Név</th>
-                <th scope="col">Ár</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of cartItems">
-                <td>{{ item.name }}</td>
-                <td>{{ item.cost }}</td>
-            </tr>
-        </tbody>
-    </table>
+<div *ngFor="let item of cartItems">
+    <div class="container px-5">
+        <h2>Kosár tartalma</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Név</th>
+                    <th scope="col">Ár</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.cost }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="card" style="width: 18rem;">
+            <img [src]="generateImagePath(item.name)" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{item.name}}</h5>
+                <p class="card-text">Ár: {{item.cost}} <br>
+                    Példányszám: {{item.amount}}</p>
+                <a href="#" class="btn btn-warning">Tovább!</a>
+            </div>
+        </div>
+    </div>
 </div>

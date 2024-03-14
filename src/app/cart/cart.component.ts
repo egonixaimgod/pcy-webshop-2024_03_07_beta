@@ -1,5 +1,3 @@
-// cart.component.ts
-
 import { Component } from '@angular/core';
 import { CartService } from '../cart.service';
 
@@ -13,5 +11,8 @@ export class CartComponent {
 
   constructor(private cartService: CartService) {
     this.cartItems = this.cartService.getCartItems();
+  }
+  generateImagePath(productName: string): string {
+    return `assets/images/${productName}.jpg`;
   }
 }

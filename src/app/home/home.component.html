@@ -40,7 +40,7 @@
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur error ut adipisci natus a? Repellat
                 enim rem, maiores culpa expedita architecto illo amet delectus debitis tempore, quibusdam saepe
                 temporibus vitae?</p>
-            <a class="btn btn-primary" routerLink="/about">Rólunk</a>
+            <a class="btn btn-warning" routerLink="/about">Rólunk</a>
         </div>
     </div>
     <!--mobilban a padding fos geci!-->
@@ -59,12 +59,12 @@
             <div class="card h-100">
                 <div class="card-body">
                     <h2 class="card-title">{{product.name}}</h2>
-                    <h5 class="card-text">Példányszám: {{product.amount}} <br> Ár: {{product.cost}}
+                    <h5 class="card-text">Példányszám: {{product.amount}} <br> Ár: {{product.cost}} Ft
                     </h5>
                 </div>
                 <img [src]="generateImagePath(product.name)" class="card-img-bottom" alt="AMD Ryzen 5 5600X" style="">
                 <div class="card-footer">
-                    <a class="btn btn-primary" (click)="onAddToCart(product)" routerLink="/cart">Rendeld meg!</a>
+                    <a class="btn btn-warning" (click)="onAddToCart(product)" routerLink="/cart">Rendeld meg!</a>
                 </div>
             </div>
         </div>
